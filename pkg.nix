@@ -93,7 +93,7 @@ buildPythonApplication rec {
     icon = "rcu";
     desktopName = "RCU";
     genericName = "reMarkable Tablet Tool";
-    categories = "Graphics;Viewer;Utility;";
+    categories = [ "Graphics" "Viewer" "Utility" ];
   };
 
   postInstall = ''
