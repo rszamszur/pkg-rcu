@@ -438,6 +438,15 @@ index bdc8315..1701180 100644
  
  def rmdir(path):
      if path.is_file() and path.exists():
+@@ -577,7 +577,7 @@ class Document:
+ 
+         # Load pencil textures (shared for brushes, takes a lot of time
+         # because there are many)
+-        from model.pens.textures import PencilTextures
++        from ..model.pens.textures import PencilTextures
+         pencil_textures = PencilTextures()
+ 
+         # This res_mod is the resolution modifier--users can set a
 @@ -1508,7 +1508,7 @@ class DocumentPage:
              layer.render_to_painter(painter, vector)
  
@@ -446,7 +455,7 @@ index bdc8315..1701180 100644
 +from ..model.pens import *
  class DocumentPageLayer:
      pen_widths = []
- 
+
 diff --git a/src/model/rcu.py b/src/model/rcu.py
 index 9d07733..12dfd69 100644
 --- a/src/model/rcu.py
