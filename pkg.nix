@@ -2,7 +2,7 @@
 , xorg, qt5, libXinerama, libxkbcommon
 , buildPythonApplication, pytest, pyside2, pyside2-tools
 , paramiko, pdfrw, qtpy, pillow, certifi
-, texlive, pygments, which
+, texlive, pygments, which, setuptools
 # Build LaTeX manual -- will download the full texlive if enabled
 , buildUserManual ? false
 # Supply --argstr productKey CODE to download
@@ -49,7 +49,7 @@ buildPythonApplication rec {
     which
   ];
 
-  buildInputs = [ pyside2-tools ];
+  buildInputs = [ pyside2-tools setuptools ];
 
   propagatedBuildInputs = [
     xorg.libxcb
