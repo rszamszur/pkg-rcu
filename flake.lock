@@ -1,20 +1,5 @@
 {
   "nodes": {
-    "customConfig": {
-      "locked": {
-        "lastModified": 1630400035,
-        "narHash": "sha256-MWaVOCzuFwp09wZIW9iHq5wWen5C69I940N1swZLEQ0=",
-        "owner": "input-output-hk",
-        "repo": "empty-flake",
-        "rev": "2040a05b67bf9a669ce17eca56beb14b4206a99a",
-        "type": "github"
-      },
-      "original": {
-        "owner": "input-output-hk",
-        "repo": "empty-flake",
-        "type": "github"
-      }
-    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -33,23 +18,22 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1639794673,
-        "narHash": "sha256-bjauV0+Z4WmxeiHXecyiEOEwo+XysO6kx36beeatbl0=",
+        "lastModified": 1672580127,
+        "narHash": "sha256-3lW3xZslREhJogoOkjeZtlBtvFMyxHku7I/9IVehhT8=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "2627c4b795107ba94562626925f5a9a2bc62ebc6",
+        "rev": "0874168639713f547c05947c76124f78441ea46c",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
-        "ref": "nixos-21.11",
+        "ref": "nixos-22.05",
         "repo": "nixpkgs",
         "type": "github"
       }
     },
     "root": {
       "inputs": {
-        "customConfig": "customConfig",
         "flake-compat": "flake-compat",
         "nixpkgs": "nixpkgs",
         "utils": "utils"
