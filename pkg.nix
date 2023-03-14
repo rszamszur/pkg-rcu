@@ -23,7 +23,7 @@ buildPythonApplication rec {
       }
     else
       throw ''
-        You need to provide "--argstr productKey CODE" to the nix-build command-line.
+        You need set RCU_PRODUCT_KEY environment variable with your product key.
       '';
 
   format = "pyproject";
