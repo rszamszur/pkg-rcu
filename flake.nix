@@ -2,19 +2,18 @@
   description = "RCU";
 
   inputs = {
-    nixpkgs.url = github:NixOS/nixpkgs/nixos-21.11;
+    nixpkgs.url = github:NixOS/nixpkgs/nixos-22.05;
     utils.url = github:numtide/flake-utils;
-    customConfig.url = github:input-output-hk/empty-flake;
     flake-compat = {
       url = github:input-output-hk/flake-compat;
       flake = false;
     };
   };
 
-  outputs = { self, nixpkgs, utils, customConfig, flake-compat }: {
+  outputs = { self, nixpkgs, utils, flake-compat }: {
     overlay = final: prev: {
       rcu = final.python38.pkgs.callPackage ./pkg.nix {
-        inherit (customConfig.rcu) productKey;
+        productKey = builtins.getEnv "RCU_PRODUCT_KEY";
         buildUserManual = false;
       };
       rcuFull = final.rcu.override {
