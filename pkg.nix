@@ -14,6 +14,8 @@ buildPythonApplication rec {
   version = "r2021.002";
   name = "${pname}-${version}";
 
+  impureEnvVars = [ "RCU_PRODUCT_KEY" ];
+
   src = if productKey != null
     then
       fetchzip {
@@ -85,6 +87,9 @@ buildPythonApplication rec {
   preFixup = ''
     # Add QT wrapper args to Python wrapper args
     makeWrapperArgs+=("''${qtWrapperArgs[@]}")
+    # Prevents this error during RunTime: Could not initialize GLX
+    # https://github.com/NixOS/nixpkgs/issues/82959#issuecomment-657306112
+    makeWrapperArgs+=(--set QT_XCB_GL_INTEGRATION none)
   '';
 
   desktopItem = makeDesktopItem {
